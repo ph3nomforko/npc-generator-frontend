@@ -14,9 +14,10 @@ class OccupationsContainer extends React.Component {
   render() {
     return (
         <div>
-          <h2>OccupationsContainer</h2>
+          <h3>OccupationsContainer</h3>
+          <OccupationInput /><br/><br/>
           <Occupations occupations={this.props.occupations}/>
-          <OccupationInput />
+
         </div>
     )
   }
