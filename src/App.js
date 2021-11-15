@@ -1,13 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import fetchOccupations from './actions/fetchOccupations'
+// import fetchOccupations from './actions/fetchOccupations'
+import OccupationsContainer from './containers/OccupationsContainer';
 
 class App extends React.Component {
 
   render () {
     return (
       <div className="App">
-        App
+        <h1>App</h1>
+        <OccupationsContainer />
       </div>
     );
   }
