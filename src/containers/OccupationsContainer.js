@@ -1,6 +1,6 @@
 import React from 'react';
 import Occupations from '../components/Occupations'
-import OccupationsInput from '../components/OccupationsInput'
+import OccupationInput from '../components/OccupationInput'
 
 export default class OccupationsContainer extends React.Component {
   render() {
@@ -8,7 +8,7 @@ export default class OccupationsContainer extends React.Component {
         <div>
           <h2>OccupationsContainer</h2>
           <Occupations />
-          <OccupationsInput />
+          <OccupationInput />
         </div>
     )
   }

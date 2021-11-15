@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class OccupationsInput extends React.Component {
+export default class OccupationInput extends React.Component {
   render() {
     return (
       <div>
