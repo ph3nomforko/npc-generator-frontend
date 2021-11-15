@@ -1,8 +1,16 @@
-import React from 'react';
+import React from 'react'
+import { connect } from 'react-redux'
+import { fetchOccupations } from '../actions/fetchOccupations'
+
 import Occupations from '../components/Occupations'
 import OccupationInput from '../components/OccupationInput'
 
-export default class OccupationsContainer extends React.Component {
+class OccupationsContainer extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchOccupations()
+  }
+
   render() {
     return (
         <div>
@@ -13,3 +21,11 @@ export default class OccupationsContainer extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    occupations: state.occupations
+  }
+}
+
+export default connect(mapStateToProps, {fetchOccupations})(OccupationsContainer)
