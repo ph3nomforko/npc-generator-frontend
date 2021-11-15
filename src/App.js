@@ -1,12 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import fetchOccupations from './actions/fetchOccupations'
 
 class App extends React.Component {
-
-  componentDidMount() {
-    fetch('http://[::1]:3000/api/v1/occupations')
-    .then(response => response.json())
-    .then(data => console.log(data))
-  }
 
   render () {
     return (
@@ -17,4 +13,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// const mapStateToProps = (state) => {
+//   return {
+//     occupations: state.occupations
+//   }
+// }
+
+export default connect()(App);
