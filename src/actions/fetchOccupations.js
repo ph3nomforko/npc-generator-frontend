@@ -1,0 +1,5 @@
+const fetchOccupations = () => {
+  
+}
+
+export fetchOccupations;
