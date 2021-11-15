@@ -15,7 +15,7 @@ class OccupationsContainer extends React.Component {
     return (
         <div>
           <h2>OccupationsContainer</h2>
-          <Occupations />
+          <Occupations occupations={this.props.occupations}/>
           <OccupationInput />
         </div>
     )
