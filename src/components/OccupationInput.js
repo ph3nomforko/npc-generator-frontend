@@ -17,6 +17,9 @@ class OccupationInput extends React.Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.addOccupation(this.state)
+    this.setState({
+      name: ''
+    })
   }
 
   render() {
