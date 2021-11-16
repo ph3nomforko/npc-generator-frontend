@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Routes, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { fetchOccupations } from '../actions/fetchOccupations'
 
 import Occupations from '../components/Occupations'
 import OccupationInput from '../components/OccupationInput'
+// import Occupation from '../components/Occupation'
 
 class OccupationsContainer extends React.Component {
 
@@ -15,10 +16,8 @@ class OccupationsContainer extends React.Component {
   render() {
     return (
         <div>
-          <Routes>
-            <Route path='/occupations/new' element={<OccupationInput />} />
-            <Route path='/occupations' element={<Occupations occupations={this.props.occupations} />} />
-          </Routes>
+          <Route path="/occupations/new" component={OccupationInput} />
+          <Route exact path="/occupations" render={() => <Occupations occupations={this.props.occupations} />} />
         </div>
     )
   }
