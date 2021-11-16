@@ -1,4 +1,5 @@
 import React from 'react';
+import Occupation from './Occupation'
 
 const Occupations = props => {
 
@@ -20,7 +21,7 @@ const Occupations = props => {
             <tr key={occupation.id}>
               <td>{occupation.name}</td>
               <td style={{textAlign:'center'}}>{occupation.npcs.length}</td>
-              <td style={{textAlign:'center'}}><button>View</button></td>
+              <td style={{textAlign:'center'}}><Occupation occupation={occupation} /><button>View</button></td>
               <td style={{textAlign:'center'}}><button>Add</button></td>
             </tr>
           )
