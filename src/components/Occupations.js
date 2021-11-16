@@ -6,7 +6,10 @@ const Occupations = props => {
   return (
     <div>
       <table>
-        <caption><strong>Occupations</strong></caption>
+        <caption>
+          <strong>Occupations</strong><br/>
+          <button>Add a New Occupation</button>
+        </caption>
         <thead>
           <tr>
             <th>Name</th>
