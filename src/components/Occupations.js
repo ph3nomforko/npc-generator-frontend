@@ -1,5 +1,6 @@
 import React from 'react';
 import Occupation from './Occupation'
+import { Link } from 'react-router-dom'
 
 const Occupations = props => {
 
@@ -8,7 +9,9 @@ const Occupations = props => {
       <table>
         <caption>
           <strong>Occupations</strong><br/>
-          <button>Add a New Occupation</button>
+          <Link to="/occupations/new">
+            <button>Add a New Occupation</button>
+          </Link>
         </caption>
         <thead>
           <tr>
