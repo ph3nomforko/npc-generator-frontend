@@ -2,8 +2,11 @@ import React from 'react'
 
 const Occupation = props => {
 
+
   return (
-    <div></div>
+    <div>
+      <h3>Occupation</h3>
+    </div>
   )
 
 }
