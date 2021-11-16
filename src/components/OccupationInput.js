@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addOccupation } from '../actions/addOccupation'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 class OccupationInput extends React.Component {
 
