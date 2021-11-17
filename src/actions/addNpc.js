@@ -1,11 +1,10 @@
 export const addNpc = (npc, occupationId) => {
 
   return (dispatch) => {
-    fetch(`http://[::1]:3000/api/v1/occupations/${occupationId}/npcs`, {
+    fetch(`http://localhost:3000/api/v1/occupations/${occupationId}/npcs`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(npc)
     })
