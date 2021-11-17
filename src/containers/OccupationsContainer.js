@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { fetchOccupations } from '../actions/fetchOccupations'
 
 import Occupations from '../components/Occupations'
@@ -15,11 +15,13 @@ class OccupationsContainer extends React.Component {
 
   render() {
     return (
-        <div>
+      <div>
+        <Switch>
           <Route path='/occupations/new' component={OccupationInput} />
           <Route path='/occupations/:id' render={(routerProps) => <Occupation {...routerProps} occupations={this.props.occupations} />} />
           <Route exact path='/occupations' render={(routerProps) => <Occupations {...routerProps} occupations={this.props.occupations} />} />
-        </div>
+        </Switch>
+      </div>
     )
   }
 }
