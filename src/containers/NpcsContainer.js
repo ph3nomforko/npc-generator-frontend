@@ -11,7 +11,7 @@ class NpcsContainer extends React.Component {
       <div>
           <Npcs npcs={this.props.occupation.npcs} />
           <Npc npc={this.props.occupation.npcs} />
-          <NpcInput />
+          <NpcInput occupation={this.props.occupation} />
       </div>
     )
   }
