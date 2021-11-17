@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { addNpc } from '../actions/addNpc'
 
 class NpcInput extends React.Component {
 
@@ -22,7 +23,7 @@ class NpcInput extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.addNpc(this.state)
+    //this.props.addNpc(this.state, this.props.id)
     this.setState({
       name: '',
       species: '',
@@ -38,6 +39,7 @@ class NpcInput extends React.Component {
   render() {
     return(
       <div>
+        <strong>Add an NPC</strong>
         <form onSubmit={this.handleSubmit}>
           <label>Name: </label>
           <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/><br/>
