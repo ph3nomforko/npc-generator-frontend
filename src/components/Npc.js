@@ -1,14 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { deleteNpc } from '../actions/deleteNpc'
+import { editNpc } from '../actions/editNpc'
 
 const Npc = props => {
 
   let npc = props.npcs.find(({id}) => id === parseInt(props.match.params.id, 10))
 
-  const handleDelete = (event) => {
-    console.log(npc)
+  const handleDelete = event => {
     props.deleteNpc(npc.id, npc.occupation.id)
+  }
+
+  const handleEdit = event => {
+    props.editNpc(npc.id, npc.occupation.id)
   }
 
   if (npc) {
@@ -22,6 +26,7 @@ const Npc = props => {
         <p><b>Behavior:</b> {npc.behavior}</p>
         <p><b>Plot Key/Hook:</b> {npc.plot_key}</p>
         <button onClick={handleDelete}>Delete NPC</button>
+        <button onClick={handleEdit}>Edit NPC</button>
       </div>
     )
   } else {
@@ -30,4 +35,4 @@ const Npc = props => {
 
 }
 
-export default connect(null, {deleteNpc})(Npc)
+export default connect(null, {deleteNpc}, {editNpc})(Npc)
