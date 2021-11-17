@@ -2,7 +2,8 @@ import React from 'react'
 
 const Occupation = props => {
 
-  let occupation = props.occupations[props.match.params.id - 1]
+  let index = parseInt(props.match.params.id, 10)
+  let occupation = props.occupations.find(({id}) => id === index)
 
   if (occupation) {
     return (
@@ -39,7 +40,7 @@ const Occupation = props => {
   } else {
     return null
   }
-  
+
 }
 
 export default Occupation
