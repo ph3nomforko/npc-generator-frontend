@@ -1,9 +1,9 @@
 import React from 'react'
+import NpcsContainer from '../containers/NpcsContainer'
 
 const Occupation = props => {
 
-  let index = parseInt(props.match.params.id, 10)
-  let occupation = props.occupations.find(({id}) => id === index)
+  let occupation = props.occupations.find(({id}) => id === parseInt(props.match.params.id, 10))
 
   if (occupation) {
     return (
@@ -35,6 +35,8 @@ const Occupation = props => {
             }
           </tbody>
         </table>
+        <NpcsContainer />
+        <button>Add an NPC</button>
       </div>
     )
   } else {
