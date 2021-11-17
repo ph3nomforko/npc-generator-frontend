@@ -14,6 +14,9 @@ const Occupations = props => {
       <table>
         <caption>
           <h3>Occupations</h3>
+          <Link to={'/occupations/new'}>
+            <button>Add an Occupation</button>
+          </Link>
         </caption>
         <thead>
           <tr>
