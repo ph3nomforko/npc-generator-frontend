@@ -8,7 +8,14 @@ export default function occupationReducer(state = {occupations: []}, action) {
       return {...state, occupations: [...state.occupations, action.payload]}
     case 'ADD_NPC':
       return {...state, occupations: state.occupations.map(occupation => {
-        debugger
+        if (occupation.id === action.payload.id) {
+          return action.payload
+        } else {
+          return occupation
+        }
+      })}
+    case 'DELETE_NPC':
+      return {...state, occupations: state.occupations.map(occupation => {
         if (occupation.id === action.payload.id) {
           return action.payload
         } else {
