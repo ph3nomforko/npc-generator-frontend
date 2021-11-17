@@ -23,7 +23,7 @@ class NpcInput extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    //this.props.addNpc(this.state, this.props.id)
+    this.props.addNpc(this.state, this.props.occupation.id)
     this.setState({
       name: '',
       species: '',
@@ -65,4 +65,4 @@ class NpcInput extends React.Component {
 
 }
 
-export default connect(null)(NpcInput)
+export default connect(null, {addNpc})(NpcInput)
