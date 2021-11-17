@@ -35,7 +35,9 @@ const Npcs = (props) => {
             </tr> )})}
         </tbody>
       </table>
+      <Link to={`/occupations/${props.npcs[0].occupation.id}/new`} >
       <button>Add an NPC</button>
+      </Link>
     </div>
   )
 }
