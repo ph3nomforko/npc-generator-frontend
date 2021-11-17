@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom'
-import Occupation from './Occupation'
+import { Link } from 'react-router-dom'
 
 const Occupations = props => {
 
@@ -8,7 +7,7 @@ const Occupations = props => {
     <div>
       <table>
         <caption>
-          <strong>Occupations</strong><br/>
+          <h3>Occupations</h3>
         </caption>
         <thead>
           <tr>
@@ -25,7 +24,7 @@ const Occupations = props => {
               <td>{occupation.name}</td>
               <td style={{textAlign:'center'}}>{occupation.npcs.length}</td>
               <td style={{textAlign:'center'}}>
-                <button>View</button>
+                <Link to={`/occupations/${occupation.id}`}><button>View</button></Link>
               </td>
               <td style={{textAlign:'center'}}><button>Add</button></td>
             </tr>
