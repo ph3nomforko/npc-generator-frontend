@@ -9,9 +9,9 @@ class NpcsContainer extends React.Component {
   render() {
     return (
       <div>
+          <NpcInput occupation={this.props.occupation} />
           <Npcs npcs={this.props.occupation.npcs} />
           <Npc npc={this.props.occupation.npcs} />
-          <NpcInput occupation={this.props.occupation} />
       </div>
     )
   }
