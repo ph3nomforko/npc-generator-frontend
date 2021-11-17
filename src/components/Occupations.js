@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom'
 
 const Occupations = props => {
 
+  let occupations = props.occupations.sort((a,b) =>{
+    if (a.name < b.name) return -1
+    if (a.name > b.name) return 1
+    return 0
+  })
+
   return (
     <div>
       <table>
@@ -11,14 +17,14 @@ const Occupations = props => {
         </caption>
         <thead>
           <tr>
-            <th>Name</th>
+            <th style={{textAlign:'left'}}>Name</th>
             <th>NPC Count</th>
             <th>View NPCs</th>
             <th>Add an NPC</th>
           </tr>
         </thead>
         <tbody>
-        {props.occupations.map(occupation => {
+        {occupations.map(occupation => {
           return (
             <tr key={occupation.id}>
               <td>{occupation.name}</td>
