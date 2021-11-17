@@ -9,7 +9,7 @@ export const editNpc = (npc, occupationId) => {
       body: JSON.stringify(npc)
     })
     .then(response => response.json())
-    .then(occupation => dispatch({type:'ADD_NPC', payload: occupation}))
+    .then(occupation => dispatch({type:'EDIT_NPC', payload: occupation}))
   }
 
 }
