@@ -5,7 +5,7 @@ import { fetchOccupations } from '../actions/fetchOccupations'
 
 import Occupations from '../components/Occupations'
 import OccupationInput from '../components/OccupationInput'
-// import Occupation from '../components/Occupation'
+import Occupation from '../components/Occupation'
 
 class OccupationsContainer extends React.Component {
 
@@ -16,8 +16,9 @@ class OccupationsContainer extends React.Component {
   render() {
     return (
         <div>
-          <Route path="/occupations/new" component={OccupationInput} />
-          <Route exact path="/occupations" render={() => <Occupations occupations={this.props.occupations} />} />
+          <Route path='/occupations/new' component={OccupationInput} />
+          <Route path='/occupations/:id' render={(routerProps) => <Occupation {...routerProps} occupations={this.props.occupations} />} />
+          <Route exact path='/occupations' render={(routerProps) => <Occupations {...routerProps} occupations={this.props.occupations} />} />
         </div>
     )
   }
