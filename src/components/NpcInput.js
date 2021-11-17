@@ -9,8 +9,8 @@ class NpcInput extends React.Component {
     species: '',
     alignment: '',
     appearance: '',
-    strong_ability: '',
-    weak_ability: '',
+    strong_ability: 'Strength',
+    weak_ability: 'Dexterity',
     behavior: '',
     plot_key: ''
   }
@@ -50,10 +50,24 @@ class NpcInput extends React.Component {
           <label>Appearance: </label>
           <input type="text" placeholder="Appearance" name="appearance" value={this.state.appearance} onChange={this.handleChange}/><br/>
           <label>Strong Ability: </label>
-          <input type="text" placeholder="Strong Ability" name="strong_ability" value={this.state.strong_ability} onChange={this.handleChange}/><br/>
-          <label>Weak Ability: </label>
-          <input type="text" placeholder="Weak Ability" name="weak_ability" value={this.state.weak_ability} onChange={this.handleChange}/><br/>
-          <label>Behavior: </label>
+          <select name="strong_ability" value={this.state.strong_ability} onChange={this.handleChange}>
+            <option>Strength</option>
+            <option>Dexterity</option>
+            <option>Constitution</option>
+            <option>Intelligence</option>
+            <option>Wisdom</option>
+            <option>Charisma</option>
+          </select>
+          <br/><label>Weak Ability: </label>
+          <select name="weak_ability" value={this.state.weak_ability} onChange={this.handleChange}>
+            <option>Dexterity</option>
+            <option>Strength</option>
+            <option>Constitution</option>
+            <option>Intelligence</option>
+            <option>Wisdom</option>
+            <option>Charisma</option>
+          </select>
+          <br/><label>Behavior: </label>
           <input type="text" placeholder="Behavior" name="behavior" value={this.state.behavior} onChange={this.handleChange}/><br/>
           <label>Plot Key: </label>
           <input type="text" placeholder="Plot Key" name="plot_key" value={this.state.plot_key} onChange={this.handleChange}/><br/>
