@@ -16,6 +16,7 @@ const Npc = props => {
       <div>
         <h4>{npc.name}</h4>
         <p><b>Race:</b> {npc.species}</p>
+        <p><b>Class:</b> {npc.npc_class}</p>
         <p><b>Alignment:</b> {npc.alignment}</p>
         <p><b>Appearance:</b> {npc.appearance}</p>
         <p><b>Strong Ability:</b> {npc.strong_ability}</p>
