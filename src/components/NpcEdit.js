@@ -23,7 +23,8 @@ class NpcEdit extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.editNpc(this.state, this.props.occupation.id)
+    let editedNpc = {...this.state, npcId: this.props.npc.id, occupationId: this.props.npc.occupation.id}
+    this.props.editNpc(editedNpc)
     this.setState({
       name: '',
       species: '',
@@ -39,7 +40,7 @@ class NpcEdit extends React.Component {
   render() {
     return(
       <div>
-        <strong>Add an NPC</strong>
+        <strong>Edit this NPC</strong>
         <form onSubmit={this.handleSubmit}>
           <label>Name: </label>
           <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/><br/>
