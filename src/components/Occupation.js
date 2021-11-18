@@ -7,8 +7,8 @@ const Occupation = props => {
 
   if (occupation) {
     return (
-      <div>
-        <h3>{occupation.name}</h3>
+      <div className="container">
+        <h3 style={{textAlign:"center"}}>{occupation.name}</h3>
         <NpcsContainer occupation={occupation} />
       </div>
     )
