@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom'
 const NavBar = props => {
 
   return (
-    <div>
-      <h1 style={{textAlign:'center'}}>NPC Generator</h1>
-      <Link to='/occupations' style={{paddingRight: '10px'}}> Occupations </Link>
-      <Link to='/occupations/new'> Add an Occupation </Link>
-    </div>
+    <nav>
+      <div className="nav-wrapper">
+        <a href="/#" className="brand-logo">NPC Generator</a>
+        <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <li><Link to='/occupations' style={{paddingRight: '10px'}}> Occupations </Link></li>
+          <li><Link to='/occupations/new'> Add an Occupation </Link></li>
+        </ul>
+      </div>
+    </nav>
   )
 }
 
