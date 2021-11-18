@@ -11,7 +11,7 @@ const Npcs = (props) => {
 
   return (
     <div>
-      <table>
+      <table className="highlight">
         <thead>
           <tr>
             <th style={{textAlign:'left'}}>Name</th>
@@ -36,6 +36,8 @@ const Npcs = (props) => {
             </tr> )})}
         </tbody>
       </table>
+        <h5>Add an NPC</h5>
+        <p>Don't see an NPC that fits your idea? Add one for your next session!</p>
         <Link to={`/occupations/${props.match.params.id}/new`}>
           <button>Add an NPC</button>
         </Link>
