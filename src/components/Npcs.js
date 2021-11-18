@@ -12,7 +12,6 @@ const Npcs = (props) => {
   return (
     <div>
       <table>
-        <caption><strong>NPCs</strong></caption>
         <thead>
           <tr>
             <th style={{textAlign:'left'}}>Name</th>
