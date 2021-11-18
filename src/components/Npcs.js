@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Npcs = (props) => {
+const Npcs = props => {
 
   let npcs = props.npcs.sort((a,b) =>{
     if (a.name < b.name) return -1
