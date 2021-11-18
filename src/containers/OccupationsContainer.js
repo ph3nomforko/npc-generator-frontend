@@ -6,6 +6,7 @@ import { fetchOccupations } from '../actions/fetchOccupations'
 import Occupations from '../components/Occupations'
 import OccupationInput from '../components/OccupationInput'
 import Occupation from '../components/Occupation'
+import NavBar from '../components/NavBar'
 
 class OccupationsContainer extends React.Component {
 
@@ -16,6 +17,7 @@ class OccupationsContainer extends React.Component {
   render() {
     return (
       <div>
+        <NavBar />
         <Switch>
           <Route path='/occupations/new' component={OccupationInput} />
           <Route path='/occupations/:id' render={(routerProps) => <Occupation {...routerProps} occupations={this.props.occupations} />} />
