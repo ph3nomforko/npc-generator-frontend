@@ -24,13 +24,13 @@ class OccupationInput extends React.Component {
 
   render() {
     return (
-      <div>
-        <strong>Add an NPC Occupation/Role!</strong>
-        <p>What is your NPC's role in the world? Are they a king? Or a beggar? Or perhaps the BBEG's right-hand-man?</p>
-        <form onSubmit={this.handleSubmit}>
+      <div className="container">
+        <h5 style={{textAlign:'center'}}>Add an NPC Occupation/Role!</h5>
+        <p style={{textAlign:'center'}}>What is your NPC's role in the world? Are they a king? Or a beggar? Or perhaps the BBEG's right-hand-man?</p>
+        <form className="container" onSubmit={this.handleSubmit}>
           <label>Name: </label>
           <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/><br/>
-          <input type="submit" />
+          <button className="btn waves-effect waves-light green" type="submit">Submit</button>
         </form>
       </div>
     )

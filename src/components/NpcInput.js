@@ -38,7 +38,7 @@ class NpcInput extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="container">
         <h5>Add an NPC</h5>
         <form onSubmit={this.handleSubmit}>
           <label>Name: </label>
@@ -73,7 +73,7 @@ class NpcInput extends React.Component {
           <input type="text" placeholder="Behavior" name="behavior" value={this.state.behavior} onChange={this.handleChange}/><br/>
           <label>Plot Key: </label>
           <input type="text" placeholder="Plot Key" name="plot_key" value={this.state.plot_key} onChange={this.handleChange}/><br/>
-          <input type="submit" />
+          <button className="btn waves-effect waves-light green" type="submit">Submit</button>
         </form>
       </div>
     )

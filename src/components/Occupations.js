@@ -11,7 +11,8 @@ const Occupations = props => {
 
   return (
     <div className="container">
-      <h3 style={{textAlign:'center'}}>Occupations</h3>
+      <h4 style={{textAlign:'center'}}>NPC Roles and Occupations</h4>
+      <p style={{textAlign:'center'}}><b>Find your next NPC through this alphabatized list of their various roles and occupations</b></p>
       <table className="highlight">
         <thead>
           <tr>
@@ -27,18 +28,20 @@ const Occupations = props => {
               <td>{occupation.name}</td>
               <td style={{textAlign:'center'}}>{occupation.npcs.length}</td>
               <td style={{textAlign:'center'}}>
-                <Link to={`/occupations/${occupation.id}`}><button>View</button></Link>
+                <Link className="waves-effect waves-light btn-small grey darken-1" to={`/occupations/${occupation.id}`}>View</Link>
               </td>
             </tr>
           )
         })}
         </tbody>
       </table>
-      <h5>Add an Occupation</h5>
-      <p>Don't see an NPC role/occupation that fits your needs? Then create your own and then create its first NPC!</p>
-      <Link to={'/occupations/new'}>
-        <button>Add an Occupation</button>
-      </Link>
+      <div className="center-align">
+        <h5>Add an Occupation</h5>
+        <p>Don't see an NPC role/occupation that fits your needs? Then create your own and then create its first NPC!</p>
+        <Link className="waves-effect waves-light btn-small orange darken-4" to={'/occupations/new'}>
+          Add an Occupation
+        </Link>
+      </div>
     </div>
   )
 }

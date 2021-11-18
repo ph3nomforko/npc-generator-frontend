@@ -45,7 +45,7 @@ class NpcEdit extends React.Component {
   render() {
     return(
       <div>
-        <button data-target="modal-edit" className="btn modal-trigger">Edit this NPC</button>
+        <button data-target="modal-edit" className="btn modal-trigger grey darken-1">Edit this NPC</button>
         <div id="modal-edit" className="modal">
           <form onSubmit={this.handleSubmit}>
             <div className="modal-content">
@@ -84,7 +84,7 @@ class NpcEdit extends React.Component {
               <input type="text" placeholder="Plot Key" name="plot_key" value={this.state.plot_key} onChange={this.handleChange}/><br/>
             </div>
             <div className="modal-footer">
-              <input className="modal-close" type="submit" />
+              <button className="modal-close waves-effect waves-light btn-small green" type="submit">Submit</button>
             </div>
           </form>
         </div>
