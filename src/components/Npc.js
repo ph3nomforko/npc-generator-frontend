@@ -14,7 +14,7 @@ const Npc = props => {
   if (npc) {
     return (
       <div>
-        <h4>{npc.name}</h4>
+        <h5>{npc.name}</h5>
         <p><b>Race:</b> {npc.species}</p>
         <p><b>Class:</b> {npc.npc_class}</p>
         <p><b>Alignment:</b> {npc.alignment}</p>
@@ -24,7 +24,7 @@ const Npc = props => {
         <p><b>Behavior:</b> {npc.behavior}</p>
         <p><b>Plot Key/Hook:</b> {npc.plot_key}</p>
         <button onClick={handleDelete}>Delete NPC</button>
-        <NpcEdit npc={npc} />
+        <br/><br/><NpcEdit npc={npc} />
       </div>
     )
   } else {
