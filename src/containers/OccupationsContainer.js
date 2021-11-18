@@ -6,6 +6,7 @@ import { fetchOccupations } from '../actions/fetchOccupations'
 import Occupations from '../components/Occupations'
 import OccupationInput from '../components/OccupationInput'
 import Occupation from '../components/Occupation'
+import Welcome from '../components/Welcome'
 import NavBar from '../components/NavBar'
 
 class OccupationsContainer extends React.Component {
@@ -19,6 +20,7 @@ class OccupationsContainer extends React.Component {
       <div>
         <NavBar />
         <Switch>
+          <Route exact path="/" component={Welcome} />} />
           <Route path='/occupations/new' component={OccupationInput} />
           <Route path='/occupations/:id' render={(routerProps) => <Occupation {...routerProps} occupations={this.props.occupations} />} />
           <Route exact path='/occupations' render={(routerProps) => <Occupations {...routerProps} occupations={this.props.occupations} />} />
