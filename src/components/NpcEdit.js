@@ -46,6 +46,8 @@ class NpcEdit extends React.Component {
           <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/><br/>
           <label>Race: </label>
           <input type="text" placeholder="Race" name="species" value={this.state.species} onChange={this.handleChange}/><br/>
+          <label>Class: </label>
+          <input type="text" placeholder="Class" name="class" value={this.state.npc_class} onChange={this.handleChange}/><br/>
           <label>Alignment: </label>
           <input type="text" placeholder="Alignment" name="alignment" value={this.state.alignment} onChange={this.handleChange}/><br/>
           <label>Appearance: </label>
