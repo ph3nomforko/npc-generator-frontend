@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { deleteNpc } from '../actions/deleteNpc'
-import { editNpc } from '../actions/editNpc'
+import NpcEdit from '../components/NpcEdit'
 
 const Npc = props => {
 
@@ -11,22 +11,19 @@ const Npc = props => {
     props.deleteNpc(npc.id, npc.occupation.id)
   }
 
-  const handleEdit = event => {
-    props.editNpc(npc.id, npc.occupation.id)
-  }
-
   if (npc) {
     return (
       <div>
         <h4>{npc.name}</h4>
         <p><b>Race:</b> {npc.species}</p>
         <p><b>Alignment:</b> {npc.alignment}</p>
+        <p><b>Appearance:</b> {npc.appearance}</p>
         <p><b>Strong Ability:</b> {npc.strong_ability}</p>
         <p><b>Weak Ability:</b> {npc.weak_ability}</p>
         <p><b>Behavior:</b> {npc.behavior}</p>
         <p><b>Plot Key/Hook:</b> {npc.plot_key}</p>
         <button onClick={handleDelete}>Delete NPC</button>
-        <button onClick={handleEdit}>Edit NPC</button>
+        <NpcEdit npc={npc} />
       </div>
     )
   } else {
@@ -35,4 +32,4 @@ const Npc = props => {
 
 }
 
-export default connect(null, {deleteNpc}, {editNpc})(Npc)
+export default connect(null, {deleteNpc})(Npc)
