@@ -39,7 +39,7 @@ class NpcInput extends React.Component {
   render() {
     return(
       <div>
-        <strong>Add an NPC</strong>
+        <h5>Add an NPC</h5>
         <form onSubmit={this.handleSubmit}>
           <label>Name: </label>
           <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/><br/>
@@ -52,7 +52,7 @@ class NpcInput extends React.Component {
           <label>Appearance: </label>
           <input type="text" placeholder="Appearance" name="appearance" value={this.state.appearance} onChange={this.handleChange}/><br/>
           <label>Strong Ability: </label>
-          <select name="strong_ability" value={this.state.strong_ability} onChange={this.handleChange}>
+          <select name="strong_ability" className="browser-default" value={this.state.strong_ability} onChange={this.handleChange}>
             <option>Strength</option>
             <option>Dexterity</option>
             <option>Constitution</option>
@@ -61,7 +61,7 @@ class NpcInput extends React.Component {
             <option>Charisma</option>
           </select>
           <br/><label>Weak Ability: </label>
-          <select name="weak_ability" value={this.state.weak_ability} onChange={this.handleChange}>
+          <select name="weak_ability" className="browser-default" value={this.state.weak_ability} onChange={this.handleChange}>
             <option>Dexterity</option>
             <option>Strength</option>
             <option>Constitution</option>
