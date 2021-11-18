@@ -39,8 +39,9 @@ class NpcInput extends React.Component {
   render() {
     return(
       <div className="container">
-        <h5>Add an NPC</h5>
-        <form onSubmit={this.handleSubmit}>
+        <h5 style={{textAlign:"center"}}>Add a new {this.props.occupation.name}</h5>
+        <p style={{textAlign:'center'}}>Give your NPC some initial information that will let them be realized in your game.</p>
+        <form className="center-align" onSubmit={this.handleSubmit}>
           <label>Name: </label>
           <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/><br/>
           <label>Race: </label>
