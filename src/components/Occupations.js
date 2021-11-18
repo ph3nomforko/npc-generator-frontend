@@ -23,7 +23,6 @@ const Occupations = props => {
             <th style={{textAlign:'left'}}>Name</th>
             <th>NPC Count</th>
             <th>View NPCs</th>
-            <th>Add an NPC</th>
           </tr>
         </thead>
         <tbody>
@@ -35,7 +34,6 @@ const Occupations = props => {
               <td style={{textAlign:'center'}}>
                 <Link to={`/occupations/${occupation.id}`}><button>View</button></Link>
               </td>
-              <td style={{textAlign:'center'}}><button>Add</button></td>
             </tr>
           )
         })}
