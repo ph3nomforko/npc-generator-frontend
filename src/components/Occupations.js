@@ -12,7 +12,7 @@ const Occupations = props => {
   return (
     <div className="container">
       <h3 style={{textAlign:'center'}}>Occupations</h3>
-      <table>
+      <table className="highlight">
         <thead>
           <tr>
             <th style={{textAlign:'left'}}>Name</th>
