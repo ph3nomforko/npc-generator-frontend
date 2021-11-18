@@ -5,7 +5,7 @@ export const deleteNpc = (npcId, occupationId) => {
       method: 'DELETE'
     })
     .then(response => response.json())
-    .then(occupation => dispatch({type: 'DELETE_NPC', payload: occupation}))
+    .then(occupation => dispatch({type: 'NPC_UPDATE', payload: occupation}))
   }
 
 }
