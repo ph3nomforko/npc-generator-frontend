@@ -10,19 +10,14 @@ const Occupations = props => {
   })
 
   return (
-    <div>
+    <div className="container">
+      <h3 style={{textAlign:'center'}}>Occupations</h3>
       <table>
-        <caption>
-          <h3>Occupations</h3>
-          <Link to={'/occupations/new'}>
-            <button>Add an Occupation</button>
-          </Link>
-        </caption>
         <thead>
           <tr>
             <th style={{textAlign:'left'}}>Name</th>
-            <th>NPC Count</th>
-            <th>View NPCs</th>
+            <th style={{textAlign:'center'}}>NPC Count</th>
+            <th style={{textAlign:'center'}}>View NPCs</th>
           </tr>
         </thead>
         <tbody>
@@ -39,6 +34,11 @@ const Occupations = props => {
         })}
         </tbody>
       </table>
+      <h5>Add an Occupation</h5>
+      <p>Don't see an NPC role/occupation that fits your needs? Then create your own and then create its first NPC!</p>
+      <Link to={'/occupations/new'}>
+        <button>Add an Occupation</button>
+      </Link>
     </div>
   )
 }
