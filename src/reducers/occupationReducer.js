@@ -13,7 +13,15 @@ export default function occupationReducer(state = {occupations: []}, action) {
         } else {
           return occupation
         }
-      })}
+    })}
+    case 'EDIT_NPC':
+      return {...state, occupations: state.occupations.map(occupation => {
+        if (occupation.id === action.payload.id) {
+          return action.payload
+        } else {
+          return occupation
+        }
+    })}
     case 'DELETE_NPC':
       return {...state, occupations: state.occupations.map(occupation => {
         if (occupation.id === action.payload.id) {
