@@ -17,6 +17,7 @@ const Npcs = (props) => {
           <tr>
             <th style={{textAlign:'left'}}>Name</th>
             <th>Race</th>
+            <th>Class</th>
             <th>Alignment</th>
             <th>View</th>
           </tr>
@@ -26,6 +27,7 @@ const Npcs = (props) => {
             <tr key={npc.id}>
               <td>{npc.name}</td>
               <td>{npc.species}</td>
+              <td>{npc.npc_class}</td>
               <td>{npc.alignment}</td>
               <td>
                 <Link to={`/occupations/${npc.occupation.id}/npcs/${npc.id}`}>
