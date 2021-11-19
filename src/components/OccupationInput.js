@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { addOccupation } from '../actions/addOccupation'
 
 class OccupationInput extends React.Component {
 
   state = {
-    name: ''
+    name: '',
+    redirect: null
   }
 
   handleChange = event => {
@@ -19,11 +20,14 @@ class OccupationInput extends React.Component {
     event.preventDefault()
     this.props.addOccupation(this.state)
     this.setState({
-      name: ''
+      redirect: "/occupations"
     })
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
     return (
       <div className="container">
         <h5 style={{textAlign:'center'}}>Add an NPC Occupation/Role!</h5>
@@ -31,7 +35,7 @@ class OccupationInput extends React.Component {
         <form className="container center-align" onSubmit={this.handleSubmit}>
           <label>Name: </label>
           <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/><br/>
-          <button className="btn waves-effect waves-light green" type="submit" onClick={this.handleRedirect}>
+          <button className="btn waves-effect waves-light green" type="submit">
             Submit
           </button>
         </form>
