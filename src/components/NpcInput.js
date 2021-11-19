@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { addNpc } from '../actions/addNpc'
+import { getRandomFromArray, random_npcs } from '../data/npcGenerateInfo'
 
 class NpcInput extends React.Component {
 
@@ -11,8 +12,8 @@ class NpcInput extends React.Component {
     npc_class: '',
     alignment: '',
     appearance: '',
-    strong_ability: 'Strength',
-    weak_ability: 'Dexterity',
+    strong_ability: '',
+    weak_ability: '',
     behavior: '',
     plot_key: '',
     redirect: null
@@ -32,14 +33,31 @@ class NpcInput extends React.Component {
     })
   }
 
+  handleRandom = event => {
+    let randomized_npc = getRandomFromArray(random_npcs)
+    this.setState({
+      name: randomized_npc.name,
+      species: randomized_npc.species,
+      npc_class: randomized_npc.npc_class,
+      alignment: randomized_npc.alignment,
+      appearance: randomized_npc.appearance,
+      strong_ability: randomized_npc.strong_ability,
+      weak_ability: randomized_npc.weak_ability,
+      behavior: randomized_npc.behavior,
+      plot_key: randomized_npc.plot_key,
+      redirect: null
+    })
+  }
+
   render() {
     if (this.state.redirect) {
       return <Redirect to={this.state.redirect} />
     }
     return(
-      <div className="container">
+      <div className="container center-align">
         <h5 style={{textAlign:"center"}}>Add a new {this.props.occupation.name}</h5>
-        <p style={{textAlign:'center'}}>Give your NPC some initial information that will let them be realized in your game.</p>
+        <p style={{textAlign:'center'}}>Give your NPC some initial information that will let them be realized in your game. Or generate a random one!</p>
+        <button className="btn orange darken-4" onClick={this.handleRandom}>Generate Random NPC</button>
         <form className="center-align" onSubmit={this.handleSubmit}>
           <label>Name: </label>
           <input type="text" placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/><br/>
@@ -52,24 +70,10 @@ class NpcInput extends React.Component {
           <label>Appearance: </label>
           <input type="text" placeholder="Appearance" name="appearance" value={this.state.appearance} onChange={this.handleChange}/><br/>
           <label>Strong Ability: </label>
-          <select name="strong_ability" className="browser-default" value={this.state.strong_ability} onChange={this.handleChange}>
-            <option>Strength</option>
-            <option>Dexterity</option>
-            <option>Constitution</option>
-            <option>Intelligence</option>
-            <option>Wisdom</option>
-            <option>Charisma</option>
-          </select>
-          <br/><label>Weak Ability: </label>
-          <select name="weak_ability" className="browser-default" value={this.state.weak_ability} onChange={this.handleChange}>
-            <option>Dexterity</option>
-            <option>Strength</option>
-            <option>Constitution</option>
-            <option>Intelligence</option>
-            <option>Wisdom</option>
-            <option>Charisma</option>
-          </select>
-          <br/><label>Behavior: </label>
+          <input type="text" placeholder="Strong Ability" name="strong_ability" value={this.state.strong_ability} onChange={this.handleChange}/><br/>
+          <label>Weak Ability: </label>
+          <input type="text" placeholder="Weak Ability" name="weak_ability" value={this.state.weak_ability} onChange={this.handleChange}/><br/>
+          <label>Behavior: </label>
           <input type="text" placeholder="Behavior" name="behavior" value={this.state.behavior} onChange={this.handleChange}/><br/>
           <label>Plot Key: </label>
           <input type="text" placeholder="Plot Key" name="plot_key" value={this.state.plot_key} onChange={this.handleChange}/><br/>
