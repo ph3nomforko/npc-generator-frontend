@@ -1,9 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { deleteNpc } from '../actions/deleteNpc'
 import NpcEdit from '../components/NpcEdit'
 
 const Npc = props => {
+
+  console.log(props)
 
   let npc = props.npcs.find(({id}) => id === parseInt(props.match.params.id, 10))
 
@@ -28,7 +31,7 @@ const Npc = props => {
       </div>
     )
   } else {
-    return null
+    return (<Redirect to="/occupations" />)
   }
 
 }
