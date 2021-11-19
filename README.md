@@ -1,4 +1,6 @@
-# Introduction
+# README
+
+## Introduction
 This is an NPC Generator for TTRPGs (notable D&D). It is a JS react app that uses a Ruby API backend that can be found at (<https://github.com/ph3nomforko/npc-generator-backend>).
 
 ## Getting Started
