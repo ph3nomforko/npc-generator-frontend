@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { addNpc } from '../actions/addNpc'
 
 class NpcInput extends React.Component {
@@ -7,12 +8,14 @@ class NpcInput extends React.Component {
   state = {
     name: '',
     species: '',
+    npc_class: '',
     alignment: '',
     appearance: '',
     strong_ability: 'Strength',
     weak_ability: 'Dexterity',
     behavior: '',
-    plot_key: ''
+    plot_key: '',
+    redirect: null
   }
 
   handleChange = event => {
@@ -25,18 +28,14 @@ class NpcInput extends React.Component {
     event.preventDefault()
     this.props.addNpc(this.state, this.props.occupation.id)
     this.setState({
-      name: '',
-      species: '',
-      alignment: '',
-      appearance: '',
-      strong_ability: '',
-      weak_ability: '',
-      behavior: '',
-      plot_key: ''
+      redirect: `/occupations/${this.props.occupation.id}/npcs`
     })
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
     return(
       <div className="container">
         <h5 style={{textAlign:"center"}}>Add a new {this.props.occupation.name}</h5>

@@ -12,6 +12,7 @@ class NpcEdit extends React.Component {
   state = {
     name: '',
     species: '',
+    npc_class: '',
     alignment: '',
     appearance: '',
     strong_ability: 'Strength',
