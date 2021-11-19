@@ -19,7 +19,6 @@ const Occupations = props => {
             <th style={{textAlign:'left'}}>Name</th>
             <th style={{textAlign:'center'}}>NPC Count</th>
             <th style={{textAlign:'center'}}>View NPCs</th>
-            <th style={{textAlign:'center'}}>Quick NPC</th>
           </tr>
         </thead>
         <tbody>
@@ -30,9 +29,6 @@ const Occupations = props => {
               <td style={{textAlign:'center'}}>{occupation.npcs.length}</td>
               <td style={{textAlign:'center'}}>
                 <Link className="waves-effect waves-light btn-small grey darken-1" to={`/occupations/${occupation.id}`}>View</Link>
-              </td>
-              <td style={{textAlign:'center'}}>
-                <button className="btn-small grey darken-1">Quick NPC</button>
               </td>
             </tr>
           )
